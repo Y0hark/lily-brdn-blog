@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_liens",
+  "info": {
+    "name": "Liens",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "lien.lien"
+    }
+  }
+}

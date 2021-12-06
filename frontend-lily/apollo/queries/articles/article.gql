@@ -1,0 +1,38 @@
+query Articles($id: ID!) {
+  article (id: $id) {
+    id
+    title
+    copy
+    cover {
+      url
+    }
+    date_of_pub
+    category {
+      name
+    }
+    comments {
+      id
+      surname
+      copy
+    }
+    content {
+      ... on ComponentBlogParagraphe {
+        copy
+      }
+      ... on ComponentBlogImages {
+        images {
+          url
+        }
+      }
+      ... on ComponentBlogLien {
+        link {
+          link
+        }
+      }
+      ... on ComponentBlogQuote {
+        quote
+        author
+      }
+    }
+  }
+}

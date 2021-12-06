@@ -1,0 +1,7 @@
+query Comment($id_article: Int) {
+  comments(where: { id_article: $id_article }) {
+    id
+    surname
+    copy
+  }
+}

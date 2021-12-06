@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_lien_liens",
+  "info": {
+    "name": "Lien",
+    "icon": "angle-double-right"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    }
+  }
+}

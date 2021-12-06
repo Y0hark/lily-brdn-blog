@@ -1,0 +1,9 @@
+mutation($comment: createCommentInput) {
+  createComment(input: $comment) {
+    comment {
+      surname
+      copy
+      id_article
+    }
+  }
+}
