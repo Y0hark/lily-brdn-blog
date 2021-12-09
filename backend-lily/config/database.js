@@ -9,7 +9,7 @@ module.exports = ({ env }) => ({
         port: env.int("DATABASE_PORT", 5432),
         database: env("DATABASE_NAME", "lily-brdn-db"),
         username: env("DATABASE_USERNAME", "postgres"),
-        password: env("DATABASE_PASSWORD", "Actimel164."),
+        password: env("DATABASE_PASSWORD", "Actimel164"),
         schema: env("DATABASE_SCHEMA", "public"),
       },
       options: {
