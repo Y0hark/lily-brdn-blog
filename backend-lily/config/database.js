@@ -5,7 +5,7 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: "postgres",
-        host: env("DATABASE_HOST", "172.17.0.2"),
+        host: env("DATABASE_HOST", "172.17.0.3"),
         port: env.int("DATABASE_PORT", 5432),
         database: env("DATABASE_NAME", "lily-brdn-db"),
         username: env("DATABASE_USERNAME", "postgres"),
