@@ -33,7 +33,7 @@
           </v-card>
         </div>
         <content-viewer :article="article" />
-        // Module de commentaires (en construction)
+        <!-- // Module de commentaires (en construction) -->
         <comments-viewer :comments="comments" />
         <v-card class="mt-5">
           <form v-if="showCommentForm === true">
