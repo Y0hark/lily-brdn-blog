@@ -9,7 +9,8 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 })
 export default ({ req, app }) => {
   return {
-    httpEndpoint: process.env.BACKEND_URL || 'https://lily-brdn.herokuapp.com/graphql',
+    // httpEndpoint: process.env.BACKEND_URL || 'https://lily-brdn.herokuapp.com/graphql',
+    httpEndpoint: process.env.BACKEND_URL || 'http://yohark.de:1337/graphql',
     // httpEndpoint: process.env.BACKEND_URL || 'http://localhost:1337/graphql',
     cache: new InMemoryCache({ fragmentMatcher })
   }

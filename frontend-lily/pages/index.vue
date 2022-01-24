@@ -103,8 +103,10 @@
 
 <script>
 import InstaDisplayer from '../components/InstaDisplayer.vue'
-import articlesQuery from '~/apollo/queries/articles/articles.gql'
-import categoriesQuery from '~/apollo/queries/categories/categories.gql'
+// import articlesQuery from '~/apollo/queries/articles/articles.gql'
+// import categoriesQuery from '~/apollo/queries/categories/categories.gql'
+import Api from '../services/api/api'
+
 export default {
   components: {
     InstaDisplayer
@@ -134,19 +136,22 @@ export default {
       return articlesPreviews
     }
   },
-  apollo: {
-    categories: {
-      prefetch: true,
-      query: categoriesQuery
-    },
-    articles: {
-      prefetch: true,
-      query: articlesQuery,
-      variables () {
-        return { id: parseInt(this.$route.params.id) }
-      }
-    }
+  async mounted () {
+    await this.loadArticles()
   },
+  // apollo: {
+  //   categories: {
+  //     prefetch: true,
+  //     query: categoriesQuery
+  //   },
+  //   articles: {
+  //     prefetch: true,
+  //     query: articlesQuery,
+  //     variables () {
+  //       return { id: parseInt(this.$route.params.id) }
+  //     }
+  //   }
+  // },
   methods: {
     // Fonction qui récupère les premiers caractères d'un article pour en faire une petite prévisualisation dans les cartes
     preview (copy) {
@@ -159,6 +164,14 @@ export default {
         this.flag = 'all'
       } else {
         this.flag = category
+      }
+    },
+    async loadArticles () {
+      try {
+        this.articles = (await Api.getAllArticles()).data
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(`Could not load articles: ${error}`)
       }
     }
   }

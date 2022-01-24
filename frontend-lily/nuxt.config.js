@@ -4,7 +4,8 @@ export default {
 
   // Modify env variable
   env: {
-    strapiBaseUri: process.env.API_URL || 'https://lily-brdn.herokuapp.com'
+    // strapiBaseUri: process.env.API_URL || 'https://lily-brdn.herokuapp.com'
+    strapiBaseUri: process.env.API_URL || 'http://yohark.de:1337'
     // strapiBaseUri: process.env.API_URL || 'http://localhost:1337'
   },
 
@@ -94,7 +95,8 @@ export default {
   strapi: {
     entities:
     ['categories', 'articles'],
-    url: 'https://lily-brdn.herokuapp.com'
+    // url: 'https://lily-brdn.herokuapp.com'
+    url: 'http://yohark.de:1337'
     // url: 'http://localhost:1337'
   },
 

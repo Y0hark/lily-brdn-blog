@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://'
+const BASE_URL = 'http://yohark.de:1337/api'
 
 class Http {
   static async get (url, params = {}) {
