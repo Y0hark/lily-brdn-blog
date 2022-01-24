@@ -103,8 +103,6 @@
 
 <script>
 import InstaDisplayer from '../components/InstaDisplayer.vue'
-// import articlesQuery from '~/apollo/queries/articles/articles.gql'
-// import categoriesQuery from '~/apollo/queries/categories/categories.gql'
 import Api from '../services/api/api'
 
 export default {
@@ -139,19 +137,6 @@ export default {
   async mounted () {
     await this.loadArticles()
   },
-  // apollo: {
-  //   categories: {
-  //     prefetch: true,
-  //     query: categoriesQuery
-  //   },
-  //   articles: {
-  //     prefetch: true,
-  //     query: articlesQuery,
-  //     variables () {
-  //       return { id: parseInt(this.$route.params.id) }
-  //     }
-  //   }
-  // },
   methods: {
     // Fonction qui récupère les premiers caractères d'un article pour en faire une petite prévisualisation dans les cartes
     preview (copy) {

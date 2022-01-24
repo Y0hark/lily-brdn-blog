@@ -1,7 +1,7 @@
-// Construction de la page qui gère l'affichage de n'importe quel article de manière dynamique
-// On y trouve un module d'affichage des components strapi ainsi qu'un module de commentaires
 <template>
   <v-container>
+    <!-- Construction de la page qui gère l'affichage de n'importe quel article de manière dynamique
+On y trouve un module d'affichage des components strapi ainsi qu'un module de commentaires -->
     <v-btn
       class="d-xs-block d-sm-block d-md-none"
       style="position:fixed; z-index: 5;"
@@ -67,10 +67,7 @@
 <script>
 import CommentsViewer from '../../components/CommentsViewer.vue'
 import ContentViewer from '../../components/ContentViewer.vue'
-import articleQuerry from '~/apollo/queries/articles/article.gql'
-import commentMutation from '~/apollo/mutations/comment_mutation.gql'
-import commentsQuery from '~/apollo/queries/comments/comment.gql'
-// import updateArticle from '~/apollo/mutations/update_article_comments_mutation.gql'
+
 export default {
   components: {
     ContentViewer,
@@ -88,22 +85,6 @@ export default {
       comments: []
     }
   },
-  apollo: {
-    article: {
-      prefetch: false,
-      query: articleQuerry,
-      variables () {
-        return { id: parseInt(this.$route.params.id) }
-      }
-    },
-    comments: {
-      prefetch: false,
-      query: commentsQuery,
-      variables () {
-        return { id_article: parseInt(this.article.id) }
-      }
-    }
-  },
   created () {
     this.formatTitles()
   },
@@ -118,43 +99,6 @@ export default {
           heading.classList.add('pa-2')
         })
       }, 1000)
-    },
-    createComment () {
-      // Fonction de création de commentaires
-      // Cette fonction est actuellement en test et en construction car la version initialement prévue ne fonctionnait pas comme attendu
-      // Verifier comment faire pour ajouter le commentaire directement à la liste de commentaires de l'article concerné -- @Samuel GALIERE
-      const comment = this.comment
-      // const articleCommentsList = []
-      comment.id_article = Number(this.article.id)
-
-      this.$apollo.mutate({
-        mutation: commentMutation,
-        variables: {
-          comment: { data: comment }
-        }
-      }).then(window.location.reload())
-
-      // this.$apollo.query({
-      //   query: commentsQuery,
-      //   variables: {
-      //     id_article: Number(this.article.id)
-      //   }
-      // })
-      //   .then((data) => {
-      //     data.data.comments.forEach((element) => {
-      //       articleCommentsList.push(Number(element.id))
-      //     })
-      //   })
-
-      // this.$apollo.mutate({
-      //   mutation: updateArticle,
-      //   variables: {
-      //     id: this.article.id,
-      //     article_comments: {
-      //       comments: articleCommentsList
-      //     }
-      //   }
-      // }).then(window.location.reload())
     }
   }
 }
