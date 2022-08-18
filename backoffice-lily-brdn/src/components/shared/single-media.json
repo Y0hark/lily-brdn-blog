@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_single_medias",
+  "info": {
+    "displayName": "Single Media",
+    "icon": "file-image"
+  },
+  "options": {},
+  "attributes": {
+    "media_content": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
