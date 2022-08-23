@@ -1,14 +1,15 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://yohark.de:1337/'
+// const BASE_URL = "http://yohark.de:1337/api";
+const BASE_URL = 'http://localhost:1338/api'
 
 class Http {
   static async get (url, params = {}) {
     return await axios.get(BASE_URL + url, params)
   }
 
-  static async post (url, params = {}) {
-    return await axios.post(BASE_URL + url, params)
+  static async post (url, body = {}) {
+    return await axios.post(BASE_URL + url, body)
   }
 }
 
@@ -25,5 +26,17 @@ export default class Api {
   // categories api methods
   static async getAllCategories () {
     return await Http.get('/categories')
+  }
+
+  // comments api methods
+  static async getAllCommentsForOneArticle (articleId) {
+    return await Http.get('/comments/api::article.article:' + articleId)
+  }
+
+  static async postComment (articleId, comment) {
+    return await Http.post(
+      '/comments/api::article.article:' + articleId,
+      comment
+    )
   }
 }

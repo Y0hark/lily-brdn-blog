@@ -1,7 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-
   // Modify env variable
   env: {
     // strapiBaseUri: process.env.API_URL || 'https://lily-brdn.herokuapp.com'
@@ -23,26 +22,39 @@ export default {
       lang: 'fr'
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Blog personnel d\'une passionnée de mode et de développement personnel' }
+      {
+        charset: 'utf-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Blog personnel d'une passionnée de mode et de développement personnel"
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Benne&family=Handlee&family=Parisienne&display=swap'
+        href:
+          'https://fonts.googleapis.com/css2?family=Benne&family=Handlee&family=Parisienne&display=swap'
       }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-  ],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -56,12 +68,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/strapi',
-    '@nuxtjs/apollo',
-    '@nuxtjs/markdownit',
-    '@nuxtjs/robots'
-  ],
+  modules: ['@nuxtjs/strapi', '@nuxtjs/markdownit', '@nuxtjs/robots'],
 
   // Configuring markdownit module for nuxtjs
   markdownit: {
@@ -93,8 +100,7 @@ export default {
 
   // Configuring strapi module for nuxtjs
   strapi: {
-    entities:
-    ['categories', 'articles'],
+    entities: ['categories', 'articles'],
     // url: 'https://lily-brdn.herokuapp.com'
     url: 'http://yohark.de:1337'
     // url: 'http://localhost:1337'
@@ -117,10 +123,8 @@ export default {
       UserAgent: '*',
       Disallow: '/admin'
     }
-
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  build: {}
 }
