@@ -1,5 +1,7 @@
 <template>
-  <Nuxt />
+  <v-app>
+    <Nuxt />
+  </v-app>
 </template>
 
 <script>
@@ -7,6 +9,8 @@ export default {
   name: 'DefaultLayout',
   mounted() {
     this.$store.subscribe((mutation, state) => {
+      console.log('mutation', mutation)
+      console.log('state', state)
       localStorage.setItem('store', JSON.stringify(state))
     })
   },

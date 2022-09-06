@@ -21,12 +21,16 @@ export default class Api {
   }
 
   static async getArticleById(articleId) {
-    return await Http.get('/articles/' + articleId)
+    return await (
+      await Http.get('/articles/' + articleId)
+    ).data.data
   }
 
   // categories api methods
   static async getAllCategories() {
-    return await Http.get('/categories')
+    return await (
+      await Http.get('/categories')
+    ).data.data
   }
 
   // comments api methods
