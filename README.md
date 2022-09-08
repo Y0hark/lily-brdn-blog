@@ -1,6 +1,6 @@
 # LilyBardin
 
-## Lily Barin website
+## Lily Bardin website
 
 This is the front-end of Lily Bardin's personal blog in NuxtJS + Vuetify + Strapi.
 Code is free to use for the moment! It would be great though to tag me when you use this code 😀
